@@ -1,0 +1,26 @@
+﻿@page "/"
+
+<PageTitle>Home</PageTitle>
+
+<MudButton OnClick="() => OpenBookletDialog()" Color="Color.Error" Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.MenuBook">
+    Booklet
+</MudButton>
+
+@code {
+
+    private async void OpenBookletDialog()
+    {
+        await Dialog.ShowAsync<TurnjsDialog>(string.Empty, new DialogOptions()
+        {
+            NoHeader = true,
+            FullScreen = true,
+            CloseButton = false,
+            // MaxWidth = MaxWidth.ExtraExtraLarge,
+            // FullWidth = true,
+            Position = DialogPosition.Center,
+            BackgroundClass = "Dialog-Blur",
+            CloseOnEscapeKey = true,
+        });
+    }
+
+}

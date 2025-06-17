@@ -1,0 +1,20 @@
+﻿@namespace Maanfee.Turnjs
+@inject TurnjsService Turnjs
+
+<div class="page-header">
+    @if (Page.TitleTemplate != null)
+    {
+        @Page.TitleTemplate(Page)
+    }
+    else
+    {
+        <h1 class="page-title">@Page.PageTitle</h1>
+    }
+</div>
+
+@code{
+
+    [Parameter]
+    public TurnjsPage Page { get; set; } = new();
+
+}

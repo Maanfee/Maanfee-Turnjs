@@ -1,0 +1,22 @@
+﻿@namespace Maanfee.Turnjs
+@inject TurnjsService Turnjs
+
+<div class="page-content-container">
+    <div class="page-content">
+        @if (Page.ContentTemplate != null)
+        {
+            @Page.ContentTemplate(Page)
+        }
+        else
+        {
+            @((MarkupString)Page.PageContent)
+        }
+    </div>
+</div>
+
+@code{
+
+    [Parameter]
+    public TurnjsPage Page { get; set; } = new();
+
+}
