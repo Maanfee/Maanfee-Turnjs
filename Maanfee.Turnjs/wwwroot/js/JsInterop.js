@@ -30,6 +30,7 @@ function LoadScript(src) {
 }
 
 // *****************************************************
+
 let currentFlipbook;
 
 export function initialize(elementId, options, dotNetRef) {
@@ -78,6 +79,12 @@ export function initialize(elementId, options, dotNetRef) {
     OtherMethods(currentFlipbook);
 }
 
+export function dispose() {
+    $(currentFlipbook).turn('destroy');
+}
+
+// *****************************************************
+
 export function next() {
     $(currentFlipbook).turn('next');
 }
@@ -99,14 +106,3 @@ export function getCurrentPage() {
 }
 
 // *******************************************
-
-export function dispose() {
-    $(currentFlipbook).turn('destroy');
-}
-
-export function GetWindowDimensions() {
-    return {
-        width: window.innerWidth,
-        height: window.innerHeight,
-    };
-}

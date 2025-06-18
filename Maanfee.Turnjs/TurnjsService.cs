@@ -24,6 +24,19 @@ namespace Maanfee.Turnjs
             await _module.InvokeVoidAsync("initialize", elementId, options, _dotNetRef);
         }
 
+        public async ValueTask DisposeAsync()
+        {
+            if (_module != null)
+            {
+                await _module.InvokeVoidAsync("dispose");
+                await _module.DisposeAsync();
+            }
+            _dotNetRef?.Dispose();
+            await Task.Delay(100);
+        }
+
+        // ********************************************
+
         public async Task Next()
         {
             await _module.InvokeVoidAsync("next");
@@ -76,20 +89,5 @@ namespace Maanfee.Turnjs
 
         #endregion
 
-        public async ValueTask DisposeAsync()
-        {
-            if (_module != null)
-            {
-                //    await _module.InvokeVoidAsync("dispose");
-                //    await _module.DisposeAsync();
-            }
-            //_dotNetRef?.Dispose();
-            await Task.Delay(100);
-        }
-
-        public async Task<WindowDimensions> GetWindowDimensions()
-        {
-            return await _jsRuntime.InvokeAsync<WindowDimensions>("GetWindowDimensions");
-        }
     }
 }

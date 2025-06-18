@@ -13,58 +13,110 @@
     @if (Page.PageToolbar)
     {
         <div class="toolbar-container">
-            <div class="turnjs-toolbar">
-                <div class="toolbar-icon @(IsFirstPage ? "disabled" : "")" title="اولین صفحه" onclick="@GoToFirstPage">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22">
-                        <path d="M18.41 16.59L13.82 12l4.59-4.59L17 6l-6 6 6 6zM6 6h2v12H6z" />
-                    </svg>
-                </div>
+            <div class="turnjs-toolbar @(Options.Direction == TurnjsDirection.LTR ? "ltr" : "rtl")">
+                @if(Options.Direction == TurnjsDirection.LTR)
+                {
+                    <div class="toolbar-icon @(IsFirstPage ? "disabled" : "")" onclick="@GoToFirstPage">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22">
+                            <path d="M18.41 16.59L13.82 12l4.59-4.59L17 6l-6 6 6 6zM6 6h2v12H6z" />
+                        </svg>
+                    </div>
 
-                <div class="toolbar-icon" title="صفحه قبلی" onclick="@GoToPreviousPage">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22">
-                        <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z" />
-                    </svg>
-                </div>
+                    <div class="toolbar-icon" onclick="@GoToPreviousPage">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22">
+                            <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z" />
+                        </svg>
+                    </div>
 
-                <div class="page-counter">
-                    @IndexOfPage/@TotalPages
-                </div>
+                    <div class="page-counter">
+                        @IndexOfPage/@TotalPages
+                    </div>
 
-                <div class="toolbar-icon" title="صفحه بعدی" onclick="@GoToNextPage">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22">
-                        <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z" />
-                    </svg>
-                </div>
+                    <div class="toolbar-icon" onclick="@GoToNextPage">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22">
+                            <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z" />
+                        </svg>
+                    </div>
 
-                <div class="toolbar-icon @(IsLastPage ? "disabled" : "")" onclick="@GoToLastPage"
-                     title="آخرین صفحه">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22">
-                        <path d="M5.59 7.41L10.18 12l-4.59 4.59L7 18l6-6-6-6zM16 6h2v12h-2z" />
-                    </svg>
-                </div>
+                    <div class="toolbar-icon @(IsLastPage ? "disabled" : "")" onclick="@GoToLastPage">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22">
+                            <path d="M5.59 7.41L10.18 12l-4.59 4.59L7 18l6-6-6-6zM16 6h2v12h-2z" />
+                        </svg>
+                    </div>
 
-                <!-- جداکننده -->
-                <div class="toolbar-separator"></div>
+                    <!-- جداکننده -->
+                    <div class="toolbar-separator"></div>
 
-                <!-- آیکون چاپ -->
-                <div class="toolbar-icon disabled" title="چاپ">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22">
-                        <path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z" />
-                    </svg>
-                </div>
+                    <!-- آیکون چاپ -->
+                    <div class="toolbar-icon disabled">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22">
+                            <path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z" />
+                        </svg>
+                    </div>
 
-                <!-- آیکون فهرست -->
-                <div class="toolbar-icon" title="نمایش فهرست" onclick="@(() => GoToPage(3))">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22">
-                        <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z" />
-                    </svg>
-                </div>
+                    <!-- آیکون فهرست -->
+                    <div class="toolbar-icon" onclick="@(() => GoToPage(3))">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22">
+                            <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z" />
+                        </svg>
+                    </div>
+                }
+                else
+                {
+                    <!-- آیکون فهرست -->
+                    <div class="toolbar-icon" onclick="@(() => GoToPage(3))">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22">
+                            <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z" />
+                        </svg>
+                    </div>
+
+                    <!-- آیکون چاپ -->
+                    <div class="toolbar-icon disabled">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22">
+                            <path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z" />
+                        </svg>
+                    </div>
+
+                    <!-- جداکننده -->
+                    <div class="toolbar-separator"></div>
+
+                    <div class="toolbar-icon @(IsFirstPage ? "disabled" : "")" onclick="@GoToFirstPage">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22">
+                            <path d="M5.59 7.41L10.18 12l-4.59 4.59L7 18l6-6-6-6zM16 6h2v12h-2z" />
+                        </svg>
+                    </div>
+
+                    <div class="toolbar-icon" onclick="@GoToPreviousPage">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22">
+                            <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z" />
+                        </svg>
+                    </div>
+                
+                    <div class="page-counter">
+                        @IndexOfPage/@TotalPages
+                    </div>
+
+                    <div class="toolbar-icon" onclick="@GoToNextPage">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22">
+                            <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z" />
+                        </svg>
+                    </div>
+                
+                    <div class="toolbar-icon @(IsLastPage ? "disabled" : "")" onclick="@GoToLastPage">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22">
+                            <path d="M18.41 16.59L13.82 12l4.59-4.59L17 6l-6 6 6 6zM6 6h2v12H6z" />
+                        </svg>
+                    </div>
+                }
             </div>
         </div>
     }
 </div>
 
 @code {
+
+    [Parameter]
+    public TurnjsOptions Options { get; set; } = new();
 
     [Parameter]
     public TurnjsPage Page { get; set; } = new();
@@ -141,5 +193,7 @@
         // می‌توانید رویدادهای دیگر را نیز فراخوانی کنید
         // await OnPageChanged.InvokeAsync(CurrentPage);
     }
+
+    // ******************************************
 
 }
