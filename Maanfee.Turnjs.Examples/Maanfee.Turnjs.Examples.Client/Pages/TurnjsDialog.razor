@@ -47,7 +47,13 @@
         pages.Add(new TurnjsPage
         {
             PageToolbar = false,
-            PageTitle = "Turn.js",
+            ContentTemplate = Page => @<MudGrid>
+                <MudItem md="12" Class="d-flex justify-center mt-8 ">
+                    <MudText Color="Color.Info" Typo="Typo.h4" Align="Align.Center" >
+                        Turn.js
+                    </MudText>
+                </MudItem>
+            </MudGrid>,
             PageType = PageType.FrontCover,
             CssClass = "hard",
         });
@@ -72,12 +78,6 @@
                     <li><a onclick="@(() => OnPageClicked(10))">Page Foreach<span>10</span></a></li>
                     <li><a onclick="@(() => OnPageClicked(15))">Custom Page<span>15</span></a></li>
                     <li><a onclick="@(() => OnPageClicked(pages.Count - 2))">The End<span>@(pages.Count - 2)</span></a></li>
-                    <li><a href="#page/38">Macintosh <span>38</span></a></li>
-                    <li><a href="#page/40">Leaving Apple  <span>40</span></a></li>
-                    <li><a href="#page/43">NeXT Inc <span>43</span></a></li>
-                    <li><a href="#page/53">Wildreness years <span>53</span></a></li>
-                    <li><a href="#page/73">A visionary <span>73</span></a></li>
-                    <li><a href="#page/86">Apple is strong <span>86</span></a></li>
                 </ul>
             </div>,
         });

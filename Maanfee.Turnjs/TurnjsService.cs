@@ -89,5 +89,14 @@ namespace Maanfee.Turnjs
 
         #endregion
 
+        // ********************************************
+
+        public async Task PrintAsync()
+        {
+            if (_module != null)
+            {
+                await _module.InvokeVoidAsync("openPrintWindow");
+            }
+        }
     }
 }

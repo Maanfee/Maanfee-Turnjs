@@ -57,15 +57,15 @@ function OtherMethods(flipbookElement) {
 
         setTimeout(function () {
 
-            if ($('.magazine-viewport').data().regionClicked) {
-                $('.magazine-viewport').data().regionClicked = false;
+            if ($('.flipbook-viewport').data().regionClicked) {
+                $('.flipbook-viewport').data().regionClicked = false;
             }
             else {
-                if ($('.magazine-viewport').zoom('value') == 1) {
-                    //$('.magazine-viewport').zoom('zoomIn');
+                if ($('.flipbook-viewport').zoom('value') == 1) {
+                    //$('.flipbook-viewport').zoom('zoomIn');
                 }
                 else {
-                    $('.magazine-viewport').zoom('zoomOut');    // وقتی صفحه ورق می خورد از زوم خارج می گردد
+                    $('.flipbook-viewport').zoom('zoomOut');    // وقتی صفحه ورق می خورد از زوم خارج می گردد
                 }
             }
         }, 500);
@@ -89,7 +89,7 @@ function OtherMethods(flipbookElement) {
                 break;
             case esc:
 
-                $('.magazine-viewport').zoom('zoomOut');
+                $('.flipbook-viewport').zoom('zoomOut');
                 //e.preventDefault();
 
                 break;
@@ -99,7 +99,7 @@ function OtherMethods(flipbookElement) {
     // *******************************
 
     // Zoom.js
-    $('.magazine-viewport').zoom({
+    $('.flipbook-viewport').zoom({
         flipbook: $(currentFlipbook),
         max: function () {
             return largeMagazineWidth() / $(currentFlipbook).width();
@@ -152,9 +152,9 @@ function OtherMethods(flipbookElement) {
 
     // Zoom event
     if ($.isTouch)
-        $('.magazine-viewport').bind('zoom.doubleTap', zoomTo);
+        $('.flipbook-viewport').bind('zoom.doubleTap', zoomTo);
     else
-        $('.magazine-viewport').bind('zoom.tap', zoomTo);
+        $('.flipbook-viewport').bind('zoom.tap', zoomTo);
 
     // *******************************
 
@@ -191,15 +191,15 @@ function zoomTo(event) {
     setTimeout(function () {
 
         if (event.target && $(event.target).hasClass('zoom-this')) {
-            if ($('.magazine-viewport').data().regionClicked) {
-                $('.magazine-viewport').data().regionClicked = false;
+            if ($('.flipbook-viewport').data().regionClicked) {
+                $('.flipbook-viewport').data().regionClicked = false;
             }
             else {
-                if ($('.magazine-viewport').zoom('value') == 1) {
-                    $('.magazine-viewport').zoom('zoomIn', event);
+                if ($('.flipbook-viewport').zoom('value') == 1) {
+                    $('.flipbook-viewport').zoom('zoomIn', event);
                 }
                 else {
-                    $('.magazine-viewport').zoom('zoomOut');
+                    $('.flipbook-viewport').zoom('zoomOut');
                 }
             }
         }
@@ -213,9 +213,9 @@ function regionClick(event) {
 
     var region = $(event.target);
     if (region.hasClass('region')) {
-        $('.magazine-viewport').data().regionClicked = true;
+        $('.flipbook-viewport').data().regionClicked = true;
         setTimeout(function () {
-            $('.magazine-viewport').data().regionClicked = false;
+            $('.flipbook-viewport').data().regionClicked = false;
         }, 100);
 
         var regionType = $.trim(region.attr('class').replace('region', ''));
@@ -234,12 +234,12 @@ function processRegion(region, regionType) {
             break;
         case 'zoom':
             var regionOffset = region.offset(),
-                viewportOffset = $('.magazine-viewport').offset(),
+                viewportOffset = $('.flipbook-viewport').offset(),
                 pos = {
                     x: regionOffset.left - viewportOffset.left,
                     y: regionOffset.top - viewportOffset.top
                 };
-            $('.magazine-viewport').zoom('zoomIn', pos);
+            $('.flipbook-viewport').zoom('zoomIn', pos);
             break;
         case 'to-page':
             $(currentFlipbook).turn('page', data.page);
@@ -266,7 +266,7 @@ function resizeViewport() {
         height = $(window).height(),
         options = $(currentFlipbook).turn('options');
 
-    $('.magazine-viewport').css({
+    $('.flipbook-viewport').css({
         width: width,
         height: height
     }).zoom('resize');

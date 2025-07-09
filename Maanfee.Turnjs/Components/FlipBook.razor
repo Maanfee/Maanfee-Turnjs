@@ -3,8 +3,8 @@
 @implements IAsyncDisposable
 @inject TurnjsService Turnjs
 
-<div class="magazine-viewport">
-    <div id="@ElementId" class="magazine">
+<div class="flipbook-viewport">
+    <div id="@ElementId" class="flipbook">
         @foreach (var (item, index) in Pages.Select((p, i) => (p, i + 1)))
         {
             <div ignore="@(item.IgnorePage ? 1 : 0)" class="@item.CssClass @item.PageType" data-page-number="@index"

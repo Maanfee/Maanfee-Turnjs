@@ -1,28 +1,28 @@
 ﻿
-.magazine-viewport {
+.flipbook-viewport {
     position: absolute !important;
     top: 0% !important;
     overflow: hidden !important;
 }
 
-.magazine {
+.flipbook {
     position: absolute !important;
     margin: auto;
     left: 17% !important;
     top: 3% !important;
 }
 
-    .magazine .odd {
+    .flipbook .odd {
         background-image: linear-gradient(right, #FFF 95%, #C4C4C4 100%);
         box-shadow: inset 0 0 5px #666;
     }
 
-    .magazine .even {
+    .flipbook .even {
         background-image: linear-gradient(left, #fff 95%, #dadada 100%);
         box-shadow: inset 0 0 5px #666;
     }
 
-        .magazine .even .gradient {
+        .flipbook .even .gradient {
             position: absolute;
             top: 0;
             left: 0;
@@ -32,7 +32,7 @@
             background-image: linear-gradient(left, rgba(0,0,0,0) 95%, rgba(0,0,0,0.2) 100%);
         }
 
-    .magazine .odd .gradient {
+    .flipbook .odd .gradient {
         position: absolute;
         top: 0;
         left: 0;
@@ -42,7 +42,7 @@
         background-image: linear-gradient(right, rgba(0,0,0,0) 95%, rgba(0,0,0,0.15) 100%);
     }
 
-    .magazine .hard {
+    .flipbook .hard {
         background: #ccc !important;
         color: #333;
         box-shadow: inset 0 0 5px #666;
@@ -51,7 +51,7 @@
 
     /* ************* Page ************* */
 
-    .magazine .page {
+    .flipbook .page {
         box-shadow: 0 0 20px rgba(0,0,0,0.2);
         background-color: white;
         background-repeat: no-repeat;
@@ -190,7 +190,7 @@
 
 /**********************************************************/
 
-.magazine .FrontCover {
+.flipbook .FrontCover {
     color: #333;
     box-shadow: inset 0 0 5px #666;
     font-weight: bold;
@@ -200,7 +200,7 @@
     object-fit: cover;
 }
 
-.magazine .FrontCover_Back {
+.flipbook .FrontCover_Back {
     background-image: url('FrontCover_Back.png') !important;
     width: 100%;
     height: 100%;
@@ -208,14 +208,14 @@
     /*  transform: scaleX(var(--image-mirror)) !important;*/
 }
 
-.magazine .BackCover {
+.flipbook .BackCover {
     background-image: url('BackCover.png') !important;
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.magazine .BackCover_Back {
+.flipbook .BackCover_Back {
     background-image: url('BackCover_Back.png') !important;
     width: 100%;
     height: 100%;
@@ -224,50 +224,50 @@
 
 /* ************* Buttons ************* */
 
-.magazine-viewport .next-button,
-.magazine-viewport .previous-button {
+.flipbook-viewport .next-button,
+.flipbook-viewport .previous-button {
     width: 22px;
     height: 580px;
     position: absolute;
     top: 0;
 }
 
-.magazine-viewport .next-button {
+.flipbook-viewport .next-button {
     right: -22px;
     border-radius: 0 15px 15px 0;
 }
 
-.magazine-viewport .previous-button {
+.flipbook-viewport .previous-button {
     left: -22px;
     border-radius: 15px 0 0 15px;
 }
 
-.magazine-viewport .previous-button-hover,
-.magazine-viewport .next-button-hover {
+.flipbook-viewport .previous-button-hover,
+.flipbook-viewport .next-button-hover {
     background-color: rgba(0,0,0, 0.2);
 }
 
-.magazine-viewport .previous-button-hover,
-.magazine-viewport .previous-button-down {
+.flipbook-viewport .previous-button-hover,
+.flipbook-viewport .previous-button-down {
     background-image: url('arrows.png');
     background-position: -4px 284px;
     background-repeat: no-repeat;
 }
 
-.magazine-viewport .previous-button-down,
-.magazine-viewport .next-button-down {
+.flipbook-viewport .previous-button-down,
+.flipbook-viewport .next-button-down {
     background-color: rgba(0,0,0, 0.4);
 }
 
-.magazine-viewport .next-button-hover,
-.magazine-viewport .next-button-down {
+.flipbook-viewport .next-button-hover,
+.flipbook-viewport .next-button-down {
     background-image: url('arrows.png');
     background-position: -38px 284px;
     background-repeat: no-repeat;
 }
 
-.magazine-viewport .zoom-in .next-button,
-.magazine-viewport .zoom-in .previous-button {
+.flipbook-viewport .zoom-in .next-button,
+.flipbook-viewport .zoom-in .previous-button {
     display: none;
 }
 
@@ -277,34 +277,34 @@
 
 /* ************* Table Contents - RTL Support ************* */
 
-.magazine .table-contents.rtl {
+.flipbook .table-contents.rtl {
     direction: rtl;
     text-align: right;
 }
 
-    .magazine .table-contents.rtl li {
+    .flipbook .table-contents.rtl li {
         list-style: none;
         line-height: 30px; /* افزایش ارتفاع خط برای زبان فارسی */
     }
 
-    .magazine .table-contents.rtl span {
+    .flipbook .table-contents.rtl span {
         float: left; /* معکوس کردن float برای RTL */
         margin-left: 0;
         margin-right: 10px;
     }
 
-    .magazine .table-contents.rtl a {
+    .flipbook .table-contents.rtl a {
         text-align: right;
         padding: 0 15px 0 5px;
     }
 
-        .magazine .table-contents.rtl a:hover {
+        .flipbook .table-contents.rtl a:hover {
             background: #CAD1EE;
             color: rgba(0, 0, 0, 0.7);
         }
 
 /* استایل‌های پایه برای هر دو حالت LTR و RTL */
-.magazine .table-contents {
+.flipbook .table-contents {
     font-size: 16px;
     width: 300px;
     margin: 10px auto;
@@ -312,19 +312,19 @@
     transition: all 0.3s ease;
 }
 
-    .magazine .table-contents li {
+    .flipbook .table-contents li {
         list-style: none;
         line-height: 25px;
         transition: all 0.3s ease;
     }
 
-    .magazine .table-contents span {
+    .flipbook .table-contents span {
         float: right;
         margin-right: 0;
         margin-left: 10px;
     }
 
-    .magazine .table-contents a {
+    .flipbook .table-contents a {
         display: block;
         text-decoration: none;
         color: #333;
@@ -334,7 +334,7 @@
         transition: all 0.3s ease;
     }
 
-        .magazine .table-contents a:hover {
+        .flipbook .table-contents a:hover {
             background: #CAD1EE;
             color: rgba(0, 0, 0, 0.5);
             cursor: pointer;
@@ -342,7 +342,7 @@
 
 /**********************************************************/
 
-.magazine-viewport .loading-placeholder {
+.flipbook-viewport .loading-placeholder {
     background-image: url(loader.gif);
     width: 22px;
     height: 22px;
@@ -350,3 +350,5 @@
     top: 45%;
     left: 50%;
 }
+
+/**********************************************************/
