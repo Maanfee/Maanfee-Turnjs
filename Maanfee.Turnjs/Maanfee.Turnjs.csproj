@@ -12,13 +12,13 @@
     <RunAnalyzers>false</RunAnalyzers>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <!--**********************************************-->
-    <Version>1.6.0</Version>
+    <Version>1.7.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Components" Version="9.0.7" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.7" />
-    <PackageReference Include="Microsoft.JSInterop" Version="9.0.7" />
+    <PackageReference Include="Microsoft.AspNetCore.Components" Version="9.0.8" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.8" />
+    <PackageReference Include="Microsoft.JSInterop" Version="9.0.8" />
   </ItemGroup>
 
 </Project>
