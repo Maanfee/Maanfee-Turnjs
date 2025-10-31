@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="README.md" />
+  </Folder>
+  <Project Path="Maanfee.Turnjs.Examples/Maanfee.Turnjs.Examples.Client/Maanfee.Turnjs.Examples.Client.csproj" />
+  <Project Path="Maanfee.Turnjs.Examples/Maanfee.Turnjs.Examples/Maanfee.Turnjs.Examples.csproj" />
+  <Project Path="Maanfee.Turnjs/Maanfee.Turnjs.csproj" />
+</Solution>

@@ -12,13 +12,46 @@
     <RunAnalyzers>false</RunAnalyzers>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <!--**********************************************-->
-    <Version>1.8.0</Version>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Copyright>Copyright (c) 2025 Maanfee</Copyright>
+    <Authors>Maanfee Team (MF)</Authors>
+    <Company>Maanfee</Company>
+    <Version>1.16.0</Version>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <PackageIcon>Icon.png</PackageIcon>
+    <ApplicationIcon>favico.ico</ApplicationIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageProjectUrl>https://github.com/Maanfee</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Maanfee/Turnjs</RepositoryUrl>
+    <Description>A powerful and interactive Blazor flipbook component built with Turn.js, providing a realistic page-turning experience for digital publications.</Description>
+    <PackageTags>C#;Flipbook;Blazor;Maanfee</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Components" Version="9.0.9" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.9" />
-    <PackageReference Include="Microsoft.JSInterop" Version="9.0.9" />
+    <Content Include="favico.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\SolutionItems\Icon.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components" Version="9.0.10" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.10" />
+    <PackageReference Include="Microsoft.JSInterop" Version="9.0.10" />
   </ItemGroup>
 
 </Project>

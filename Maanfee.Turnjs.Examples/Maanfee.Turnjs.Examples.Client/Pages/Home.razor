@@ -1,10 +1,20 @@
 ﻿@page "/"
 
-<PageTitle>Home</PageTitle>
+<PageTitle>Maanfee Turn.js </PageTitle>
 
-<MudButton OnClick="() => OpenBookletDialog()" Color="Color.Error" Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.MenuBook">
-    Booklet
-</MudButton>
+<MudCard Outlined="true" Class="mt-6">
+    <MudCardContent>
+        <MudGrid>
+            <MudItem md="5"></MudItem>
+            <MudItem md="2">
+                <MudButton OnClick="() => OpenBookletDialog()" Color="Color.Error" Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.MenuBook">
+                    Booklet
+                </MudButton>
+            </MudItem>
+            <MudItem md="5"></MudItem>
+        </MudGrid>        
+    </MudCardContent>
+</MudCard>
 
 @code {
 

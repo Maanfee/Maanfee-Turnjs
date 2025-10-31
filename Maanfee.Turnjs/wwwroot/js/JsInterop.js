@@ -1,4 +1,14 @@
-﻿export async function ensureDependencies() {
+﻿//export async function ensureDependencies() {
+//    if (typeof window.$ === 'undefined' || typeof window.$.fn.turn === 'undefined') {
+//        await LoadStyle('_content/Maanfee.Turnjs/css/turn.css');
+//        await LoadScript('_content/Maanfee.Turnjs/js/JQuery.js');
+//        await LoadScript('_content/Maanfee.Turnjs/js/Turn.js');
+//        await LoadScript('_content/Maanfee.Turnjs/js/Zoom.js');
+//        await LoadScript('_content/Maanfee.Turnjs/js/Configuration.js');
+//    }
+//}
+
+export async function ensureDependencies() {
     if (typeof window.$ === 'undefined' || typeof window.$.fn.turn === 'undefined') {
         await LoadStyle('_content/Maanfee.Turnjs/css/turn.css');
         await LoadScript('_content/Maanfee.Turnjs/js/JQuery.js');
@@ -69,7 +79,7 @@ export function initialize(elementId, options, dotNetRef) {
         }
     });
 
-    $(currentFlipbook).bind('turned', function (event, page) {
+    $(currentFlipbook).on('turned', function (event, page) {
         const isSinglePage = $(this).turn('display') === 'single';
         dotNetRef.invokeMethodAsync('PageChanged', page, isSinglePage);
     });
