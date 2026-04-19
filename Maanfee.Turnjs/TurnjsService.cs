@@ -1,6 +1,5 @@
 ﻿using Maanfee.JsServices;
 using Microsoft.JSInterop;
-using System.Reflection;
 
 namespace Maanfee.Turnjs
 {
