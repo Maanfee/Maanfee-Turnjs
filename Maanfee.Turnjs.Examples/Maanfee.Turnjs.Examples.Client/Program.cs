@@ -4,6 +4,7 @@ using Maanfee.Turnjs;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 
+// Turnjs
 builder.Services.AddTurnjs();
 builder.Services.AddMudServices();
 

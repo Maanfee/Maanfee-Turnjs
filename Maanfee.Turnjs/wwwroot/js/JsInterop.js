@@ -1,13 +1,4 @@
-﻿//export async function ensureDependencies() {
-//    if (typeof window.$ === 'undefined' || typeof window.$.fn.turn === 'undefined') {
-//        await LoadStyle('_content/Maanfee.Turnjs/css/turn.css');
-//        await LoadScript('_content/Maanfee.Turnjs/js/JQuery.js');
-//        await LoadScript('_content/Maanfee.Turnjs/js/Turn.js');
-//        await LoadScript('_content/Maanfee.Turnjs/js/Zoom.js');
-//        await LoadScript('_content/Maanfee.Turnjs/js/Configuration.js');
-//    }
-//}
-
+﻿
 export async function ensureDependencies() {
     if (typeof window.$ === 'undefined' || typeof window.$.fn.turn === 'undefined') {
         await LoadStyle('_content/Maanfee.Turnjs/css/turn.css');

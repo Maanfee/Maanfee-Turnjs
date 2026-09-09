@@ -9,6 +9,7 @@ builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents()
     .AddInteractiveWebAssemblyComponents();
 
+// Turnjs
 builder.Services.AddTurnjs();
 builder.Services.AddMudServices();
 
